@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Selection</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Styling for the popup */
+      .popup {
+        position: fixed;
+       
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+      }
+
+      .popup h2 {
+        margin-top: 0;
+        font-size: 24px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .popupContent h3 {
+        margin: 10px 0 5px;
+      }
+
+      .popupContent p {
+        margin: 0 0 10px;
+      }
+
+      .popup button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .popup button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Styling for the results section */
+      #resultSection {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+
+      #resultsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .content {
+        flex: 1;
+        border: 1px solid #ccc; /* Optional for visual separation */
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #7c6669;
+      }
+      .car-item {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        width: calc(33.333% - 20px);
+        box-sizing: border-box;
+        background-color: white;
+        text-align: center;
+      }
+
+      .car-item img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+
+      .car-item h3 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+      }
+
+      .car-item p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      .car-item .cta-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .car-item .cta-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body style="background-color: #7c6669">
+    <header>
+      <div class="logo">
+        <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img" />
+      </div>
+      <h1>CAR FINDER</h1>
+      <nav>
+        <ul>
+          <li><a href="taskmanager.html">Accueil</a></li>
+          <li><a href="voitures.html">Nos Voitures</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main><section style="background-image: url('lotus emira.jpeg');height: 480px;background-size: cover;background-position: center;">
+        <form action="javascript:void(0);"><table id="tab1" style="color: #f0e4d1">
+            <h2>LEVEL :</h2><tr><th id="level"><input type="radio" name="level" value="high" /> High :</th><td id="level">
+                <select name="priceHigh" id="priceHigh"><option value="">Choisir une option</option>
+                  <option value="204650">$204 650</option><option value="245850">$245 850</option><option value="247308">$247 308</option>
+                  <option value="251825">$251 825</option><option value="432700">$432 700</option><option value="276450">$276 450</option>
+                  <option value="370000">$370 000</option><option value="423000">$423 000</option><option value="432700">$432 700</option>
+                  <option value="467450">$467 450</option><option value="510000">$510 000</option></select></td></tr>
+            <tr><th id="level"><input type="radio" name="level" value="medium" /> Medium :
+              </th><td id="level">
+                <select name="priceMedium" id="priceMedium"><option value="">Choisir une option</option>
+                  <option value="45400">$45,400</option><option value="48595">$48 595</option><option value="54500">$54,500</option>
+                  <option value="58050">$58,050</option><option value="75900">$75 900</option><option value="72700">$72 700</option>
+                </select> </td></tr>
+            <tr><th id="level"><input type="radio" name="level" value="low" /> Low :</th><td id="level">
+                <select name="priceLow" id="priceLow"><option value="">Choisir une option</option><option value="18014">$18 014</option>
+                  <option value="19115">$19 115</option><option value="23145">$23 145</option><option value="24145">$24 145</option>
+                  <option value="25400">$25 400</option><option value="26445">$26 445</option></select></td></tr>
+            <tr><td id="bt"><input type="button" value="Chercher" class="chercher" onclick="openPopup()" /></td></tr>
+          </table></form></section>
+
+<section id="resultSection" style="background-color: #7c6669"><h2 style="color:  #025db7; background-color: black">Voitures trouvées</h2>
+        <div id="resultsContainer"><div class="content"></div></div></section></main>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-info">
+        <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+        </div>
+      </div>
+    </footer>
+
+<div class="popup-overlay" id="popupOverlay"></div><div class="popup" id="popup" style="background-color: #7c6669"><h2>Résultats de votre
+   recherche</h2><div id="popupContent">Votre recherche apparaîtra ici.</div><button onclick="closePopup()">Fermer</button></div>
+    <script>
+  const cars = {
+high: [
+          {
+            nom: "Aston martin Db12",
+            prix: 251825,
+            imgSrc: "high level/astonmartin-db12.jpeg", // Correct path
+            link: "astonmartin-db12.html",
+          },
+          {
+            nom: "Aston martin Vanquish",
+            prix: 432700,
+            imgSrc: "high level/astonmartin-vanquish.jpeg", // Correct path
+            link: "astonmartin-vanquish.html",
+          },
+          {
+            nom: "Bently Continental-gt",
+            prix: 245850,
+            imgSrc: "high level/bently-gt.jpeg", // Correct path
+            link: "bently-gt.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Bently Flying-spur-speed",
+            prix: 276450,
+            imgSrc: "high level/bently-Flying-spur-speed.jpeg",
+            link: "bently-Flying-spur-speed.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Ferrari 12cilindri",
+            prix: 467000,
+            imgSrc: "high level/Ferrari-12cilindri.jpeg",
+            link: "Ferrari-12cilindri.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Ferrari roma",
+            prix: 247308,
+            imgSrc: "high level/Ferrari-roma1.jpeg",
+            link: "Ferrari-roma.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Mercedes-benz Maybach-s-class",
+            prix: 204650,
+            imgSrc: "high level/Mercedes-benz-Maybach-s-class1.jpg",
+            link: "Mercedes-benz-Maybach-s-class.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Rolls-Royce Ghost",
+            prix: 370000,
+            imgSrc: "high level/Rolls-Royce-Ghost.jpeg",
+            link: "Rolls-Royce-Ghost.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Rolls-Royce Spectre",
+            prix: 423000,
+            imgSrc: "high level/Rolls-Royce-Spectre.jpeg",
+            link: "Rolls-Royce-Spectre.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Rolls-Royce phantom",
+            prix: 510000,
+            imgSrc: "high level/Rolls-Royce-phantom1.jpg",
+            link: "Rolls-Royce-phantom.html",
+            type: "Sedan",
+          },
+        ],
+        medium: [
+          {
+            nom: "Acura TLX",
+            prix: 45400,
+            imgSrc: "medium level/Acura-TLX($45 400).jpg",
+            link: "acura_tlx.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Acura TLX type",
+            prix: 584050,
+            imgSrc: "medium level/Acura TLX Type S($58.050).jpg",
+            link: "acura_tlx_type.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Cadillac CT5",
+            prix: 48595,
+            imgSrc: "medium level/cadillac-ct5($48 595 ).jpg",
+            link: "cadillac_ct5.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Hyundai Ioniq 6",
+            prix: 54500,
+            imgSrc: "medium level/Hyundai Ioniq 6($54.500).jpg",
+            link: "hyundai_ioniq_6.html",
+            type: "Sedan",
+          },
+          {
+            nom: "BMW Serie 5",
+            prix: 72700,
+            imgSrc: "medium level/bmw-serie-5($72 700).jpeg",
+            link: "bmw.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Audi S 6",
+            prix: 75900,
+            imgSrc: "medium level/audi-s6($75 900).jpg",
+            link: "audi-s6.html",
+            type: "Sedan",
+          },
+        ],
+        low: [
+          {
+            nom: "Honda Accord",
+            prix: 29445,
+            imgSrc: "low level/honda_accord1.jpeg", // Correct path
+            link: "honda_accord.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Honda Civic-sport-touring-hybrid",
+            prix: 25400,
+            imgSrc: "low level/Honda-Civic-sport-touring-hybrid1.jpeg", // Correct path
+            link: "Honda-Civic-sport-touring-hybrid.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Kia Forte",
+            prix: 24145,
+            imgSrc: "low level/Kia-Forte.jpeg", // Correct path
+            link: "Kia-Forte.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Kia K4",
+            prix: 23145,
+            imgSrc: "low level/Kia-K4.jpg",
+            link: "Kia-K4.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Mitsubishi Mirage",
+            prix: 18014,
+            imgSrc: "low level/mitsubishi-mirage.jpeg",
+            link: "mitsubishi-mirage.html",
+            type: "Sedan",
+          },
+          {
+            nom: "Mitsubishi Mirage-G4",
+            prix: 19115,
+            imgSrc: "low level/mitsubishi.jpg",
+            link: "mitsubishi-mirage-G4.html",
+            type: "Sedan",
+          },
+        ],
+      };
+    
+      function openPopup() {
+        const selectedLevel = document.querySelector('input[name="level"]:checked');
+        
+        if (!selectedLevel) {
+          alert("Veuillez sélectionner un niveau.");
+          return;
+        }
+    
+        const levelValue = selectedLevel.value;
+        const priceSelect = document.getElementById(`price${levelValue.charAt(0).toUpperCase() + levelValue.slice(1)}`);
+        const selectedPrice = parseInt(priceSelect.value);
+    
+        if (!selectedPrice) {
+          alert("Veuillez choisir un prix pour le niveau sélectionné.");
+          return;
+        }
+    
+        // Filtrage des voitures selon le prix sélectionné
+        const filteredCars = cars[levelValue].filter(car => car.prix <= selectedPrice);
+    
+        if (filteredCars.length === 0) {
+          document.getElementById("popupContent").textContent = "Aucune voiture trouvée pour le prix sélectionné.";
+        } else {
+          let carDetails = "";
+          filteredCars.forEach(car => {
+            carDetails += `
+              <div id="content">
+                <h3 style="text-align:center;">${car.nom}</h3>
+                <p style="text-align:center;"><b>Prix:</b> $${car.prix.toLocaleString()}</p>
+                <img src="${car.imgSrc}" style="height:200px;width:300px; border-radius: 10px;" onclick="ouvrirPage('${car.imgSrc}')">
+              </div>
+            `;
+          });
+          document.getElementById("popupContent").innerHTML = carDetails;
+        }
+    
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("popupOverlay").style.display = "block";
+      }
+    
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("popupOverlay").style.display = "none";
+        document.getElementById("resultsContainer").innerHTML = document.getElementById("popupContent").innerHTML;
+      }
+    
+      document.getElementById("popupOverlay").addEventListener("click", closePopup);
+    
+      // Correspondance entre images et pages HTML
+      const imageToPageMap = {
+        "medium level/Acura-TLX($45 400).jpg": "acura.html",
+        "medium level/Acura TLX Type S($58.050).jpg": "acura.html",
+        "medium level/cadillac-ct5($48 595 ).jpg": "Cadillac.html",
+        "high level/astonmartin-db12.jpeg": "astonmartin.html",
+        "high level/astonmartin-vanquish.jpeg": "astonmartin.html",
+        "high level/bently-gt.jpeg": "bently.html",
+        "high level/bently-Flying-spur-speed.jpeg": "bently.html",
+        "high level/Ferrari-12cilindri.jpeg": "ferrari.html",
+        "high level/Mercedes-benz-Maybach-s-class1.jpg": "mercedes.html",
+        "high level/Rolls-Royce-Ghost.jpeg": "RollsRoyce.html",
+        "high level/Rolls-Royce-Spectre.jpeg": "RollsRoyce.html",
+        "high level/Rolls-Royce-phantom1.jpg": "RollsRoyce.html",
+        "medium level/Hyundai Ioniq 6($54.500).jpg": "hyundai.html",
+        "medium level/bmw-serie-5($72 700).jpeg": "bmw.html",
+        "low level/honda_accord1.jpeg": "honda.html",
+        "low level/Honda-Civic-sport-touring-hybrid1.jpeg": "honda.html",
+        "high level/Ferrari-roma1.jpeg": "ferrari.html",
+        "low level/Kia-Forte.jpeg": "kia.html",
+        "low level/Kia-K4.jpg": "kia.html",
+        "low level/mitsubishi-mirage.jpeg": "mitsubishi.html",
+        "low level/mitsubishi.jpg": "mitsubishi.html",
+      };
+    
+      function ouvrirPage(imgSrc) {
+        if (imageToPageMap[imgSrc]) {
+          window.location.href = imageToPageMap[imgSrc];
+        } else {
+          alert("Page non trouvée pour cette voiture !");
+        }
+      }
+    </script>
+    
+    
+    
+  </body>
+</html>

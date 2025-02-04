@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            
+            display: block;
+            margin-bottom: 10px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-yellow { background-color: yellow; }
+        .color-red { background-color: red; }
+        .color-grey { background-color: grey; }
+        .color-blue { background-color: blue; }
+        .color-black { background-color: black; }
+        .color-white { background-color: white; }
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+
+            // Change la taille de l'image (si nécessaire, mais ici déjà défini en CSS)
+            carImage.style.width = "250px";  // Largeur fixée
+            carImage.style.height = "200px"; // Hauteur fixée
+        }
+    </script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 590px;">Acura</h1>
+    <div class="car-list">
+        <div class="car-item">
+            <img id="car1" src="medium level/Acura-TLX1($45 400).jpg" alt="Acura TLX">
+            <p>Acura TLX</p>
+            <p>Prix <br>$45 400</p>
+            
+            <label>
+                <input type="radio" name="bleu" class="color-option color-blue" onclick="changeCarColor('car1', 'medium level/Acura-TLX1($45 400).jpg')">
+            </label>
+            <label>
+                <input type="radio" name="blanc" class="color-option color-white" onclick="changeCarColor('car1', 'medium level/Acura-TLX($45 400)blanc.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="noir" class="color-option color-black" onclick="changeCarColor('car1', 'medium level/Acura-TLX($45 400)noir.jpg')">
+            </label><br>
+            <summary>
+                <details>
+                    <b>Moteur :</b> 2.0 L turbo, 272 ch.<br>
+                    <b>Performances :</b> Consommation 11,2 L/100 km (ville), 8,0 L/100 km (autoroute).<br>
+                    <b>Dimensions :</b> Longueur 4,84 m, largeur 1,95 m, hauteur 1,44 m.<br>
+                    <b>Intérieur :</b> Écran tactile 10,2 pouces, 358 L de coffre.<br>
+                </details>
+            </summary><br>
+            <a href="buy.html?carModel=Acura TLX" class="cta-button">BUY</a>
+        </div>
+
+        <div class="car-item">
+            <img id="car2" src="medium level/Acura TLX Type S($58.050).jpg" alt="Acura TLX Type S">
+            <p>Acura TLX Type S</p>
+            <p>Prix <br>$58 050</p>
+            <label>
+                <input type="radio" name="jeune" class="color-option color-yellow" onclick="changeCarColor('car2', 'medium level/Acura TLX Type S($58.050).jpg')">
+            </label>
+            <label>
+                <input type="radio" name="rouge" class="color-option color-red" onclick="changeCarColor('car2', 'medium level/Acura TLX Type S($58.050)rouge.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="gris" class="color-option color-grey" onclick="changeCarColor('car2', 'medium level/Acura TLX Type S($58.050)gris.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="bleu" class="color-option color-blue" onclick="changeCarColor('car2', 'medium level/Acura TLX Type S($58.050)bleu.jpg')">
+            </label>
+            <summary>
+                <details>
+                    <b>Moteur :</b> V6 biturbo 3.0 L, 355 ch.<br>
+                    <b>Performances :</b> Consommation 11,8 L/100 km (ville), 9,4 L/100 km (autoroute).<br>
+                    <b>Dimensions :</b> Longueur 4,94 m, largeur 1,95 m, hauteur 1,44 m.<br>
+                    <b>Intérieur :</b> Écran tactile 10,2 pouces, 358 L de coffre.<br>
+                </details>
+            </summary><br>
+            <a href="buy.html?carModel=Acura TLX type" class="cta-button">BUY</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+  form {color: white;margin-left: 105px;font-size: larger;}
+  td{padding: 25px;}
+  .cta-button:hover{transform: scale(1.07);background-color: cadetblue;}
+  .cta-button {background-color: #ff6f61;padding: 10px 20px;color: white;text-decoration: none;font-weight: bold;border-radius: 5px;}
+  #bt {float: left;margin-left: 70px;padding: 10px 20px;color: white;text-decoration: none;font-weight: bold;border-radius: 5px;}
+  header .logo img {height: 95px;width: 180px;}
+  nav ul {list-style-type: none;display: flex;margin: 0;}
+  nav ul li { margin-right: 20px;}
+  nav ul li a {color: white;text-decoration: none;font-weight: bold;}
+  nav ul li a:hover {text-decoration: underline;}
+  .car-item h3 {margin: 20px 0;font-size: 24px;}
+  table {float: left;font-size: 30px;}
+  input {height: 35px;width: 80px;border-radius: 5px;padding: 6px;font-size: large;}
+  select{height: 30px;width: 170px;font-size: large;}
+  .chercher{width: 160px; height: 40px; margin-top: 18px; margin-left: 79px; background-color: gray; color: white; border-radius: 20px;
+ font-weight: bold; font-family: Arial, sans-serif;}
+  label{font-size: 30px;}
+  h1 {font-size: 50px;margin-left: 250px;color: #025db7;}
+  h2 {padding: 18px;font-size: 30px;color: rgb(199, 76, 31);}
+  #level {font-size: 25px;margin-left: 60px;color:  #f0e4d1;}
+  .ins{margin-left: 60px;}
+  header{background-color: #000;padding: 20px;display: flex;justify-content: space-between;align-items: center;}
+  body {font-family: Arial, sans-serif;margin: 0;padding: 0;background-color:white;}
+#popupContent {text-align:center;}
+#popup {display: none;position: fixed;top: 30%;left: 50%;transform: translate(-50%, -50%);width: 600px;padding: 50px;
+  background-color: #6b5a62;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);z-index: 1000;}
+#overlay {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.5);z-index: 999;}
+.car-list {display: flex;justify-content: center; gap: 12px;max-width: 2000px;margin: 0 auto;}
+.car-item1 {background-color: white;padding: 8px;border-radius: 10px;width: 250px;text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease;}
+.car-item1:hover {transform: scale(1.1);}
+.car-list1 {display: flex;justify-content: center; gap: 30px;flex-wrap: wrap; max-width: 1200px;
+ margin-right: 80PX; margin-left:80PX;}
+footer {background-color: #333;color: white;padding: 20px 0;text-align: center;}
+footer p {margin: 0;}
+.social-media {margin-top: 10px;}
+.social-media a {color: white;text-decoration: none;margin: 0 10px;font-size: 18px;}
+.social-media a:hover {text-decoration: underline;}

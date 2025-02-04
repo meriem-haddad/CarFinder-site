@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            display: block;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 200px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-red { background-color: red; }
+        .color-grey { background-color: grey; }
+        .color-white { background-color: white; }
+        .color-green { background-color: green; }
+        .color-black { background-color: black; }
+        .color-blue { background-color: blue; }
+        .color-orange { background-color: orange; }
+        .color-yellow { background-color: yellow; }
+
+
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+        }
+    </script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 420px;">Rolls Royce</h1>
+    <div class="car-list" style="width: 1300px;">
+        <div class="car-item">
+            <img id="car1" src="high level/Rolls-Royce-Ghost1.jpg" alt="Rolls Royce Ghost">
+            <p> Rolls Royce Ghost</p>
+            <p>Prix <br>$370 000</p><br>
+            <label>
+                <input type="radio" name="color-ghost" class="color-option color-black" onclick="changeCarColor('car1', 'high level/Rolls-Royce-Ghost1.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="color-ghost" class="color-option color-white" onclick="changeCarColor('car1', 'high level/Rolls-Royce-Ghost.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="color-ghost" class="color-option color-blue" onclick="changeCarColor('car1', 'high level/Rolls-Royce-Ghost2.jpeg')">
+            </label>
+            <br>
+            <summary><details><b> Moteur : </b>V12 biturbo 6,75 L, 571 ch, 850 Nm. <br>
+                <b> Transmission : </b> Automatique 8 rapports, traction intégrale. <br>
+                <b> Performances  : </b>0-100 km/h en 5,2 s, vitesse max 250 km/h. <br>
+                <b> Dimensions :</b> Longueur 5,55 m, largeur 1,98 m, hauteur 1,57 m, poids 2 490 kg. <br>
+                <b> Consommation :</b> 15 L/100 km, émissions CO₂ : 347-358 g/km. <br></details></summary><br>
+            <a href="buy.html?carModel=Rolls-Royce-Ghost" class="cta-button">BUY</a>
+        </div>
+        <div class="car-item">
+            <img id="car2" src="high level/Rolls-Royce-phantom1.jpg" alt="Rolls Royce Phantom">
+            <p> Rolls Royce Spectre</p>
+            <p>Prix <br>$423 000</p><br>
+            <label>
+                <input type="radio" name="color-phantom" class="color-option color-orange" onclick="changeCarColor('car2', 'high level/Rolls-Royce-Phantom1.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="color-phantom" class="color-option color-grey" onclick="changeCarColor('car2', 'high level/Rolls-Royce-Phantom.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="color-phantom" class="color-option color-black" onclick="changeCarColor('car2', 'high level/Rolls-Royce-Phantom2.jpeg')">
+            </label>
+            <br>
+            <summary><details><b> Moteur : </b>V12 biturbo 6,75 L, 563 ch, 900 Nm. <br>
+                <b> Transmission : </b> Automatique 8 rapports, propulsion arrière. <br>
+                <b> Performances  : </b>Vitesse max 250 km/h. <br>
+                <b> Dimensions :</b> Longueur 5,76 m (standard) ou 5,98 m (empattement long), poids ~2 600 kg.<br>
+                <b> Consommation :</b> 16,3 L/100 km (mixte), CO₂ : 382 g/km.<br>
+                <b> Intérieur :</b> Sièges chauffants, système Apple CarPlay, personnalisation haut de gamme.
+            </details></summary><br>
+            <a href="buy.html?carModel=Rolls-Royce-Spectre" class="cta-button">BUY</a>
+        </div>
+        <div class="car-item">
+            <img id="car3" src="high level/Rolls-Royce-Spectre1.jpg" alt="Rolls Royce Spectre">
+            <p> Rolls Royce Spectre</p>
+            <p>Prix <br>$510 000</p><br>
+            <label>
+                <input type="radio" name="color-Spectre" class="color-option color-yellow" onclick="changeCarColor('car3', 'high level/Rolls-Royce-Spectre1.jpg')">
+            </label>
+            <label>
+                <input type="radio" name="color-Spectre" class="color-option color-gris" onclick="changeCarColor('car3', 'high level/Rolls-Royce-Spectre.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="color-Spectre1" class="color-option color-green" onclick="changeCarColor('car3', 'high level/Rolls-Royce-Spectre2.jpeg')">
+            </label><br>
+            <summary><details><b> Moteur : </b>577 ch, 900 Nm, 0-100 km/h en 4,5 s.<br>
+                <b> Batterie : </b> 107 kWh, autonomie 425 km (WLTP).<br>
+                <b> Dimensions :</b> Longueur 5,45 m, poids 2 975 kg.<br>
+                <b> Intérieur :</b> Sièges massants, plafond étoilé, système Apple CarPlay.<br>
+            </details></summary><br>
+            <a href="buy.html?carModel=Rolls-Royce-Phantom" class="cta-button">BUY</a>
+        </div>
+    </div>
+   <!-- Footer -->
+   <footer>
+    <div class="container footer-info">
+        <p>&copy; 2024 Vente de Voitures. Tous droits réservés.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+        </div>
+    </div>
+</footer>
+</body>
+</html>

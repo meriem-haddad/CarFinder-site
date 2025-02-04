@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            display: block;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 200px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-yellow { background-color: yellow; }
+        .color-red { background-color: red; }
+        .color-grey { background-color: grey; }
+        .color-blue { background-color: blue; }
+        .color-black { background-color: black; }
+        .color-white { background-color: white; }
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+
+            // Change la taille de l'image (si nécessaire, mais ici déjà défini en CSS)
+            carImage.style.width = "250px";  // Largeur fixée
+            carImage.style.height = "200px"; // Hauteur fixée
+        }
+    </script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 580px;">Ferrari</h1>
+    <div class="car-list">
+        <div class="car-item">
+            <img id="car1" src="high level/Ferrari-12cilindri.jpeg" alt="Ferrari 12cilindri">
+            <p> Ferrari 12cilindri</p>
+            <p>Prix <br>$467 000</p><br>
+            <label>
+                <input type="radio" name="ferrari12gris" class="color-option color-red" onclick="changeCarColor('car1', 'high level/Ferrari-12cilindri.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="ferrari12gris" class="color-option color-yellow" onclick="changeCarColor('car1', 'high level/Ferrari-12cilindri-jeune.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="ferrari12gris" class="color-option color-grey" onclick="changeCarColor('car1', 'high level/Ferrari-12cilindri-gris.jpeg')">
+            </label>
+            <summary><details><b> Moteur :</b> V12 6,5 L, 830 ch, 678 Nm. <br>
+                <b>Performances  : </b> Vitesse max >340 km/h, 0-100 km/h en moins de 3 s. <br>
+                <b>Dimensions :</b> Longueur 4,73 m, empattement 2,70 m. <br>
+                <b> Transmission : </b>Boîte DCT à 8 rapports.<br>
+            </details></summary><br>
+            <a href="buy.html?carModel=Ferrari12cilindri" class="cta-button">BUY</a>
+        </div>
+        <div class="car-item">
+            <img id="car2" src="high level/Ferrari-roma1.jpeg" alt="Ferrari Roma">
+            <p> Ferrari Roma</p>
+            <p>Prix <br>$247 308</p><br>
+            <label>
+                <input type="radio" name="ferrariRoma" class="color-option color-red" onclick="changeCarColor('car2', 'high level/Ferrari-roma1.jpeg')">
+            </label>
+            <label>
+                <input type="radio" name="ferrariRoma" class="color-option color-blue" onclick="changeCarColor('car2', 'high level/Ferrari-roma.jpeg')">
+            </label>
+            <summary><details><b> Moteur :</b> V8 3,9 L biturbo, 612 ch, 760 Nm.<br>
+                <b>Performances  : </b> 0-100 km/h en 3,4 s, vitesse max 320 km/h.<br>
+                <b>Dimensions :</b> Longueur 4,66 m, largeur 1,97 m, hauteur 1,30 m. <br>
+                <b> Intérieur : </b>Écran 8,4 pouces, instrumentation 16 pouces, 272 L de coffre.<br>
+            </details></summary><br>
+            <a href="buy.html?carModel=FerrariRoma" class="cta-button">BUY</a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

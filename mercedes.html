@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      label {
+          font-size: 15px;
+          margin-right: 10px;
+      }
+      input {
+          font-size: 15px;
+      }
+      p {
+          font-weight: bold;
+      }
+      .car-item img {
+          display: block;
+          margin-bottom: 10px;
+          width: 250px;
+          height: 200px;
+      }
+      .color-option {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 2px solid #000;
+          cursor: pointer;
+          margin-right: 5px;
+      }
+      .color-red { background-color: red; }
+      .color-white { background-color: white; }
+      .color-brown { background-color: brown; }
+      .color-black { background-color: black; }
+  
+
+
+  </style>
+  <script>
+      function changeCarColor(carId, imagePath) {
+          var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+          carImage.src = imagePath; // Change l'attribut 'src' de l'image
+      }
+  </script>
+  </head>
+  <body>
+    <!-- En-tête -->
+    <header>
+      <div class="logo">
+        <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="voitures.html">Nos Voitures</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1
+      style="
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+        margin-left: 470px;
+      "
+    >
+    Mercedes Benz 
+    </h1>
+    <div class="car-list">
+      <div class="car-item" style="width: 400px;">
+        <img id="car1" src="high level/Mercedes-benz-Maybach-s-class5.jpeg" style=" height: 250px;width: 400px;"alt="" />
+        <p>Mercedes-benz Maybach-s-class</p>
+        <p>Prix <br />$204 650</p>
+        <br />
+        <label>
+          <input type="radio" name="color-mercedes" class="color-option color-brown" onclick="changeCarColor('car1', 'high level/Mercedes-benz-Maybach-s-class5.jpeg')">
+      </label>
+      <label>
+          <input type="radio" name="color-mercedes" class="color-option color-red" onclick="changeCarColor('car1', 'high level/Mercedes-benz-Maybach-s-class4.jpeg')">
+      </label>
+      <label>
+          <input type="radio" name="color-mercedes" class="color-option color-black" onclick="changeCarColor('car1', 'high level/Mercedes-benz-Maybach-s-class3.jpeg')">
+      </label><br>
+        <summary><details><b> Moteurs :</b> S 580 : V8 hybride léger, 496 ch, 700 Nm. <br>
+          S 680 : V12, 621 ch, 900 Nm <br>
+          <b>Dimensions :</b>  Longueur 5,47 m, largeur 1,92 m, hauteur 1,51 m. <br>
+          <b> Intérieur : </b> Matériaux haut de gamme, technologies avancées, personnalisation étendue.
+           <br /> </details></summary> <br>
+           <a href="buy.html?carModel=Mercedes-Benz Maybach S-Class" class="cta-button">BUY</a>
+          </div>
+    </div>
+     <!-- Footer -->
+    <footer>
+      <div class="footer-info">
+          <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+          <div class="social-media">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">Twitter</a>
+              <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            display: block;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 200px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-red { background-color: red; }
+        .color-grey { background-color: grey; }
+        .color-white { background-color: white; }
+        .color-green { background-color: green; }
+        .color-black { background-color: black; }
+        .color-blue { background-color: blue; }
+        .color-orange { background-color: orangered; }
+        .color-yellow { background-color: yellow; }
+        .color-gold { background-color: goldenrod; }
+  
+  
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+        }
+    </script>
+</head>
+<body>
+      <!-- En-tête -->
+      <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 580px;">Bently</h1>
+    <div class="car-list" >
+ <div class="car-item">
+    <img id="car1" src="high level/bently-gt.jpeg" alt="" >
+    <p> Bently	Continental-gt</p>
+    <p>Prix <br>$245 850
+    </p><br>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-white" onclick="changeCarColor('car1', 'high level/bently-gt.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-grey" onclick="changeCarColor('car1', 'high level/bently-gt1.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-gold" onclick="changeCarColor('car1', 'high level/bently-gt2.jpeg')">
+    </label>
+    <br>
+    <summary><details><b> Moteur :</b> V8 biturbo 4,0 L, 542 ch, 568 lb-pi. <br>
+        <b>Performances  : </b> 0-100 km/h en 3,2 s, vitesse max 335 km/h.<br>
+        <b>Dimensions :</b>  Longueur 4,85 m, largeur 1,95 m, hauteur 1,40 m. <br>
+        <b> Intérieur  : </b> Écran tactile 12,3 pouces, 358 L de coffre, 4 passagers.<br>
+     </details></summary><br>
+     <a href="buy.html?carModel=Bentley Continental GT" class="cta-button">BUY</a>
+</div>
+<div class="car-item">
+    <img id="car2" src="high level/bently-Flying-spur-speed.jpeg" alt="" >
+    <p>Bently	Flying spur speed</p>
+    <p>Prix <br>$276 450
+    </p><br>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-green" onclick="changeCarColor('car2', 'high level/bently-Flying-spur-speed.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-orange" onclick="changeCarColor('car2', 'high level/bently-Flying-spur-speed1.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-black" onclick="changeCarColor('car2', 'high level/bently-Flying-spur-speed3.jpeg')">
+    </label>
+    <br>
+    <summary><details><b> Moteur :</b>V8 biturbo 4,0 L + moteur électrique, 782 ch, 1 000 Nm.
+        <br>
+        <b>Performances  : </b> 0-100 km/h en 3,3 s, vitesse max 333 km/h.<br>
+        <b>Dimensions :</b> Longueur 5,32 m, largeur 1,98 m, hauteur 1,48 m. <br>
+        <b> Intérieur  : </b> Écran tactile 12,3 pouces, 420 L de coffre, 4 passagers.<br>
+     </details></summary><br>
+     <a href="buy.html?carModel=Bentley Flying Spur Speed" class="cta-button">BUY</a>
+</div>
+
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-info">
+        <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+        </div>
+    </div>
+</footer>
+</body>
+</html>

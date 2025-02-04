@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            display: block;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 200px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-red { background-color: red; }
+        .color-white { background-color: white; }
+        .color-brown { background-color: brown; }
+        .color-black { background-color: black; }
+        .color-orange { background-color: orangered; }
+        .color-blue { background-color: blue; }
+        .color-grey { background-color: grey; }
+
+    
+  
+  
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+        }
+    </script>
+</head>
+<body>
+      <!-- En-tête -->
+      <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 580px;">Kia</h1>
+    <div class="car-list" >
+ <div class="car-item">
+    <img id="car1" src="low level/Kia-Forte.jpeg" alt="" >
+    <p> Kia	Forte</p>
+    <p>Prix <br>$24 145
+    </p><br>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-grey" onclick="changeCarColor('car1', 'low level/Kia-Forte.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-blue" onclick="changeCarColor('car1', 'low level/Kia-Forte1.jpeg')">
+    </label>
+   <br>
+    <summary><details><b> Motorisation :</b> 1,6 L turbo (201 ch) ou 2,0 L (147 ch), transmission manuelle, CVT ou automatique. <br>
+        <b> Design : </b>Calandre "nez de tigre", feux LED, roues 15-18 pouces. <br>
+        <b> Intérieur :</b>  Écran tactile 8-10,25", sièges chauffants/ventilés, coffre de 434 L. <br>
+        <b> Sécurité : </b>Aides à la conduite (freinage autonome, maintien de voie, angles morts). <br>
+     </details></summary><br>
+     <a href="buy.html?carModel=Kia Forte" class="cta-button">BUY</a></div>
+<div class="car-item">
+    <img id="car2" src="low level/Kia-K4.jpg" alt="" >
+    <p>Kia K4</p>
+    <p>Prix <br>$23 145
+    </p><br>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-white" onclick="changeCarColor('car2', 'low level/Kia-K4.jpg')">
+    </label>
+    <label>
+        <input type="radio" name="color-kia" class="color-option color-grey" onclick="changeCarColor('car2', 'low level/Kia-K41.jpg')">
+    </label>
+    <br>
+    <summary><details><b> Motorisation :</b> Moteurs 1,6 à 2,0 L (147-201 ch), boîte manuelle ou automatique (CVT/turbo pour GT). <br>
+        <b> Design : </b>Calandre "nez de tigre", feux LED, roues 15 à 18 pouces. <br>
+        <b> Intérieur :</b> Habitacle spacieux, écran tactile (8-10,25"), sièges chauffants/ventilés, Apple CarPlay/Android Auto. <br>
+       <b> Technologie :</b> Chargeur sans fil, système audio premium (Harman Kardon sur GT). <br>
+        <b> Sécurité : </b>Aides à la conduite avancées (freinage autonome, régulateur adaptatif, maintien de voie). <br>
+      <b>  Dimensions : </b>Longueur ~4,64 m, coffre ~434 L. <br>
+      </details></summary><br>
+      <a href="buy.html?carModel=Kia K4" class="cta-button">BUY</a>
+</div>
+
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-info">
+        <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+        </div>
+    </div>
+</footer>
+</body>
+</html>

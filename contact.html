@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="stt.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="voitures.html">Nos Voitures</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulaire de contact -->
+    <section class="contact-form"><div class="container"><h2>Contactez-nous</h2>
+     <form action="https://formsubmit.co/meriemhaddad516@gmail.com" method="POST">
+ <!-- Champs cachés --><input type="hidden" name="_captcha" value="false"> <!-- Désactive le CAPTCHA -->
+      <input type="hidden" name="_next" value="merci.html"> <!-- Redirection après envoi -->
+      <input type="hidden" name="_cc" value="votre-email-secondaire@example.com"> <!-- Copie -->
+      <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous contacterons sous peu."> <!-- Réponse automatique -->
+      <!-- Champs visibles -->
+      <div class="form-group" style="padding: 25px;">
+<label for="nom" style="color:black;">Nom :</label>
+<input type="text" id="nom" name="name" required class="bt" placeholder="Votre nom">
+      </div>
+      <div class="form-group" style="padding: 25px;">
+<label for="email" style="color:black;">Email :</label>
+<input type="email" id="email" name="email" required class="bt" placeholder="Votre email">
+      </div>
+      <div class="form-group" style="padding: 25px;">
+<label for="subject" style="color:black;">Sujet :</label>
+<input type="text" id="subject" name="subject" required class="bt" placeholder="Sujet">
+      </div>
+      <div class="form-group" style="padding: 25px;">
+<label for="message" style="color:black;">Message :</label>
+<textarea id="message" name="message" rows="5" required class="bt" placeholder="Votre message"></textarea></div>
+ <button type="submit" style="padding: 25px; width: 120px; height: 65px; text-align: center; font-size: 18px;">Envoyer</button>
+</form></div> </section>
+
+    <!-- Informations de localisation -->
+    <section class="location">
+        <div class="container">
+            <h2>Nos bureaux</h2>
+            <p>Adresse : 123 Avenue des Voitures de Luxe, Paris, France</p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-info">
+            <p>&copy; 2024 Vente de Voitures. Tous droits réservés.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

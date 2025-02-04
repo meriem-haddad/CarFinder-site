@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      label {
+          font-size: 15px;
+          margin-right: 10px;
+      }
+      input {
+          font-size: 15px;
+      }
+      p {
+          font-weight: bold;
+      }
+      .car-item img {
+          display: block;
+          margin-bottom: 10px;
+          width: 250px;
+          height: 200px;
+      }
+      .color-option {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 2px solid #000;
+          cursor: pointer;
+          margin-right: 5px;
+      }
+      .color-red { background-color: red; }
+      .color-grey { background-color: grey; }
+      .color-white { background-color: white; }
+      .color-green { background-color: green; }
+      .color-black { background-color: black; }
+      .color-blue { background-color: blue; }
+      .color-orange { background-color: orange; }
+      .color-yellow { background-color: yellow; }
+
+
+  </style>
+  <script>
+      function changeCarColor(carId, imagePath) {
+          var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+          carImage.src = imagePath; // Change l'attribut 'src' de l'image
+      }
+  </script>
+  </head>
+  <body>
+    <!-- En-tête -->
+    <header>
+      <div class="logo">
+        <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="voitures.html">Nos Voitures</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1
+      style="
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+        margin-left: 600px;
+      "
+    >
+    B M W
+    </h1>
+    <div class="car-list">
+      <div class="car-item" style="width: 600px;">
+        <img id="car2" src="medium level/bmw-serie-5($72 700).jpeg" style=" height: 400px;width: 560px;"alt="" />
+        <p>BMW	Serie 5</p>
+        <p> Prix <br />$72 700</p>
+        <br />
+        <label>
+          <input type="radio" name="color-kia" class="color-option color-grey" onclick="changeCarColor('car2', 'medium level/bmw-serie-5($72 700).jpeg')">
+      </label>
+      <label>
+          <input type="radio" name="color-kia" class="color-option color-blue" onclick="changeCarColor('car2', 'medium level/bmw-serie-5($72 700)1.jpeg')">
+      </label>
+      <br>
+        <summary>
+          <details>
+         <b>   Moteurs : </b>Essence, diesel et hybrides rechargeables, puissance de 184 à 625 ch (version M5). <br>
+<b> Transmission : </b>Automatique 8 rapports, propulsion ou xDrive (4 roues motrices). <br>
+<b> Design : </b>Élégance sportive, calandre emblématique, feux LED/laser et jantes 17-20 pouces. <br>
+<b> Intérieur :</b> Matériaux premium, écran tactile jusqu'à 12,3", sièges ergonomiques, coffre de 530 L. <br>
+<b> Technologie :</b> iDrive, commande gestuelle, affichage tête haute, compatibilité Apple CarPlay/Android Auto. <br>
+<b> Sécurité :</b> Conduite semi-autonome, régulateur adaptatif, assistance au stationnement, vision nocturne. <br>
+          </details>
+        </summary>
+        <br />
+        <a href="buy.html?carModel=BMW Serie 5" class="cta-button">BUY</a>
+      </div></div>
+     <!-- Footer -->
+    <footer>
+      <div class="footer-info">
+          <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+          <div class="social-media">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">Twitter</a>
+              <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>

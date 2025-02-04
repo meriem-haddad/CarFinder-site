@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paiement</h1>
+        <form id="paymentForm">
+            <label for="cardNumber">Numéro de carte :</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="20" pattern="\d{20}" title="Veuillez entrer exactement 20 chiffres" required inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+            <label for="expiryDate">Date d'expiration :</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+
+            <label for="cvv">CVV :</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+            <button type="submit">Payer</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simuler un paiement réussi
+            alert('Paiement réussi !');
+
+            // Rediriger vers la facture
+            window.location.href = 'invoice.html';
+        });
+    </script>
+</body>
+</html>

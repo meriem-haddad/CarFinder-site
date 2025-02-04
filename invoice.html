@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .invoice-details p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Facture</h1>
+        <p>Merci pour votre achat ! Voici votre facture :</p>
+
+        <div class="invoice-details">
+            <p><strong>Nom :</strong> <span id="fullname"></span></p>
+            <p><strong>Email :</strong> <span id="email"></span></p>
+            <p><strong>Modèle de voiture :</strong> <span id="carModel"></span></p>
+            <p><strong>Adresse de livraison :</strong> <span id="address"></span></p>
+            <p><strong>Montant total :</strong> $<span id="totalPrice"></span></p>
+        </div>
+
+        <div class="button-container">
+            <button class="button" id="sendInvoice">Obtenir la facture</button>
+            <a href="voitures.html" class="button">Retour à la Boutique</a>
+        </div>
+    </div>
+
+    <!-- Formulaire caché pour envoyer l'email -->
+    <form id="invoiceForm" action="https://formsubmit.co/votre-email@example.com" method="POST" style="display: none;">
+        <input type="hidden" name="Nom" id="formFullname">
+        <input type="hidden" name="Email" id="formEmail">
+        <input type="hidden" name="Modèle de voiture" id="formCarModel">
+        <input type="hidden" name="Adresse de livraison" id="formAddress">
+        <input type="hidden" name="Montant total" id="formTotalPrice">
+    </form>
+
+    <script>
+        // Récupérer les informations depuis le localStorage
+        const fullname = localStorage.getItem('fullname') || "Non spécifié";
+        const email = localStorage.getItem('email') || "Non spécifié";
+        const carModel = localStorage.getItem('carModel') || "Non spécifié";
+        const address = localStorage.getItem('address') || "Non spécifié";
+
+        console.log("Modèle de voiture récupéré :", carModel);
+
+        // Liste des voitures et leurs prix
+        const priceMapping = {
+            "Bentley Continental GT": 245850,
+            "Bentley Flying Spur Speed": 276450,
+            "Aston Martin DB12": 251825,
+            "Aston Martin Vanquish": 432700,
+            "Ferrari 12cilindri": 467000,
+            "Ferrari roma": 247308,
+            "Mercedes-Benz Maybach S-Class": 204650,
+            "Rolls-Royce-Ghost": 370000,
+            "Rolls-Royce-Spectre": 423000,
+            "Rolls-Royce-Phantom": 510000,
+            "Acura TLX": 45400,
+            "Acura TLX type": 584050,
+            "Cadillac CT5": 48595,
+            "Hyundai Ioniq 6": 54500,
+            "BMW Serie 5": 54500,
+            "Honda Accord": 29445,
+            "Honda Civic sport touring hybrid": 25400,
+            "Kia Forte": 24145,
+            "Kia K4": 23145,
+            "Mitsubishi Mirage": 18014,
+            "Mitsubishi Mirage-G4": 19115
+        };
+
+       // Fonction pour normaliser un texte (trim + lowercase + suppression des tirets en trop)
+    function normalizeText(text) {
+        return text.trim().toLowerCase().replace(/-/g, ' ');
+    }
+
+    // Normalisation du modèle de voiture et des clés du priceMapping
+    const normalizedCarModel = normalizeText(carModel);
+    console.log("Modèle normalisé :", normalizedCarModel);
+
+    // Récupération du prix
+    const price = priceMapping[normalizedCarModel] || "Prix non disponible";
+    console.log("Prix trouvé :", price);
+
+    // Afficher les informations sur la page
+    document.getElementById('fullname').textContent = fullname;
+    document.getElementById('email').textContent = email;
+    document.getElementById('carModel').textContent = carModel;
+    document.getElementById('address').textContent = address;
+    document.getElementById('totalPrice').textContent = price;
+
+    // Remplir les champs cachés du formulaire
+    document.getElementById('formFullname').value = fullname;
+    document.getElementById('formEmail').value = email;
+    document.getElementById('formCarModel').value = carModel;
+    document.getElementById('formAddress').value = address;
+    document.getElementById('formTotalPrice').value = price;
+
+    // Ajouter un événement sur le bouton "Obtenir la facture"
+    document.getElementById('sendInvoice').addEventListener('click', function() {
+        if (price === "Prix non disponible") {
+            alert("Erreur : Le prix de cette voiture n'a pas été trouvé.");
+            return;
+        }
+        document.getElementById('invoiceForm').submit();
+        alert("Votre facture a été envoyée à l'adresse email spécifiée.");
+    });
+</script>
+
+</body>
+</html>

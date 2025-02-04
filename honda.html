@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        input {
+            font-size: 15px;
+        }
+        p {
+            font-weight: bold;
+        }
+        .car-item img {
+            display: block;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 200px;
+        }
+        .color-option {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .color-red { background-color: red; }
+        .color-white { background-color: white; }
+        .color-brown { background-color: brown; }
+        .color-black { background-color: black; }
+        .color-orange { background-color: orangered; }
+        .color-blue { background-color: blue; }
+    
+  
+  
+    </style>
+    <script>
+        function changeCarColor(carId, imagePath) {
+            var carImage = document.getElementById(carId); // Sélectionne l'image en fonction de l'ID
+            carImage.src = imagePath; // Change l'attribut 'src' de l'image
+        }
+    </script>
+</head>
+<body>
+      <!-- En-tête -->
+      <header>
+        <div class="logo">
+            <img src="logo1.jpeg.png" alt="Logo de la marque" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="voitures.html">Nos Voitures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: black; margin-left: 580px;">Honda</h1>
+    <div class="car-list">
+ <div class="car-item">
+    <img id="car1" src="low level/honda_accord1.jpeg" alt="" >
+    <p> Honda Accord</p>
+    <p>Prix <br>$29 445
+    </p><br>
+    <label>
+        <input type="radio" name="color-honda" class="color-option color-red" onclick="changeCarColor('car1', 'low level/honda_accord1.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-honda" class="color-option color-blue" onclick="changeCarColor('car1', 'low level/honda_accord2.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-honda" class="color-option color-orange" onclick="changeCarColor('car1', 'low level/honda_accord3.jpeg')">
+    </label><br>
+    <summary><details><b> Moteurs :</b> 1.5 L turbo, 192 ch, CVT. <br>
+        Hybride 2.0 L, 204 ch, CVT. <br>
+        <b>Dimensions :</b>  Longueur 4,05 m, largeur 1,86 m, hauteur 1,45 m.<br>
+        <b>Consommation :</b>  8,4 L/100 km (1.5 L turbo), 5,6 L/100 km (hybride).<br>
+        <b> Intérieur : </b>  Écran tactile, système audio jusqu’à 8 haut-parleurs.
+         <br /> </details></summary> <br>
+    <a href="buy.html?carModel=Honda Accord" class="cta-button">BUY</a>
+</div>
+<div class="car-item">
+    <img id="car2" src="low level/Honda-Civic-sport-touring-hybrid1.jpeg" alt="" >
+    <p>Honda Civic sport touring hybrid</p>
+    <p>Prix <br>$25 400
+    </p><br>
+    <label>
+        <input type="radio" name="color-honda" class="color-option color-blue" onclick="changeCarColor('car2', 'low level/Honda-Civic-sport-touring-hybrid1.jpeg')">
+    </label>
+    <label>
+        <input type="radio" name="color-honda" class="color-option color-red" onclick="changeCarColor('car2', 'low level/Honda-Civic-sport-touring-hybrid2.jpeg')">
+    </label>
+    <br>
+    <summary><details><b> Moteurs :</b>  2.0 L, 200 ch, CVT. <br>
+        <b>Dimensions :</b>   Longueur 4,69 m, largeur 1,81 m, hauteur 1,42 m, poids 1 475 kg.<br>
+        <b>Consommation :</b>   50 mpg (ville), 45 mpg (autoroute).<br>
+        <b> Intérieur : </b>   Écran tactile 9 pouces, Bose audio, 420 L de coffre.
+         <br /> </details></summary> <br>
+       <a href="buy.html?carModel=Honda Civic sport touring hybrid" class="cta-button">BUY</a>
+</div>
+
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-info">
+        <p>&copy; 2024 Vente de Voitures de Luxe. Tous droits réservés.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="MAILTO:meriemhaddad516@gmail.com">email</a>    
+        </div>
+    </div>
+</footer>
+</body>
+</html>

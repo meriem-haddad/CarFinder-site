@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Achat - Bentley</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulaire d'Achat</h1>
+        <form id="buyForm">
+            <label for="fullname">Nom complet :</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required>
+
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+
+            <label for="phone">Numéro de téléphone :</label>
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+
+            <label for="car-model">Modèle de voiture :</label>
+            <select id="car-model" name="car-model" required>
+                <option value="">-- Sélectionnez un modèle --</option>
+                <option value="Bentley Continental GT"></option>
+                <option value="Bentley Flying Spur Speed">Bentley Flying Spur Speed</option>
+                <option value="Aston Martin DB12">Aston Martin DB12</option>
+                <option value="Aston Martin Vanquish">Aston Martin Vanquish</option>
+                <option value="Acura TLX">Acura TLX</option>
+                <option value="Acura TLX type">Acura TLX type</option>
+                <option value="BMW Serie 5">BMW Serie 5</option>
+                <option value="Cadillac CT5">Cadillac CT5</option>
+                <option value="Ferrari 12cilindri">Ferrari 12cilindri</option>
+                <option value="Ferrari roma">Ferrari roma</option>
+                <option value="Honda Accord">Honda Accord</option>
+                <option value="Honda Civic sport touring hybrid">Honda Civic sport touring hybrid</option>
+                <option value="Hyundai Ioniq 6">Hyundai Ioniq 6</option>
+                <option value="Kia Forte">Kia Forte</option>
+                <option value="Kia K4">Kia K4</option>
+                <option value="Rolls-Royce-Ghost">Rolls Royce Ghost</option>
+                <option value="Rolls-Royce-Spectre">Rolls Royce Spectre</option>
+                <option value="Rolls-Royce-Phantom">Rolls Royce Phantom</option>
+                <option value="Mitsubishi Mirage">Mitsubishi Mirage</option>
+                <option value="Mitsubishi Mirage-G4">Mitsubishi Mirage-G4</option>
+                <option value="Mercedes-Benz Maybach S-Class">Mercedes-Benz Maybach S-Class</option>
+            </select>
+
+            <label for="car-color">Couleur de la voiture :</label>
+            <select id="car-color" name="car-color" required>
+                <option value="">-- Sélectionnez une couleur --</option>
+                <!-- Les couleurs de voiture seront automatiquement mises à jour en fonction du modèle -->
+            </select>
+
+            <label for="address">Adresse de livraison :</label>
+            <textarea id="address" name="address" placeholder="Votre adresse complète" required></textarea>
+
+            <button type="submit">Valider l'Achat</button>
+        </form>
+    </div>
+
+    <script>
+        // Fonction pour récupérer les paramètres de l'URL
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        // Récupérer le modèle de voiture depuis l'URL
+        const carModel = getQueryParam('carModel');
+
+        // Récupérer la couleur en fonction du modèle
+        const carColors = {
+            "Bentley Continental GT": [ "Blanc", "Gris", "gold"],
+            "Bentley Flying Spur Speed": ["Vert", "Orange", "Noir"],
+            "Aston Martin DB12": ["Gris", "Vert", "Blanc"],
+            "Aston Martin Vanquish": ["Blanc", "Rouge", "Gris"],
+            "Acura TLX": ["Blanc", "Bleu", "Noir"],
+            "Acura TLX type": ["Jeune", "Gris", "Rouge","Bleu"],
+            "BMW Serie 5": ["Gris", "Bleu"],
+            "Ferrari 12cilindri": ["Rouge", "Jaune", "Gris"],
+            "Ferrari roma": ["Rouge","Bleu"],
+            "Cadillac CT5": ["Rouge", "Bleu", "Blanc"],
+            "Honda Accord": ["Rouge", "Bleu"],
+            "Honda Civic sport touring hybrid": [ "Bleu","Rouge"],
+            "Hyundai Ioniq 6": [ "Noir", "Blanc"],
+                "Kia Forte": ["Gris", "Bleu"],
+                "Kia K4": ["Gris", "Blanc"],
+                "Rolls-Royce-Ghost": ["Noir", "Blanc","Bleu"],
+                "Rolls-Royce-Spectre": ["Orange", "Gris", "Noir"],
+                "Rolls-Royce-Phantom": ["Jaune", "Blanc","vert"],
+                "Mitsubishi Mirage": ["Jaune"],
+                "Mitsubishi Mirage-G4": ["Rouge"],
+                "Mercedes-Benz Maybach S-Class": ["Rouge", "Noir", "Marron"],
+            // Vous pouvez ajouter d'autres modèles avec leurs couleurs respectives
+        };
+
+        // Si un modèle est présent, le sélectionner automatiquement
+        if (carModel) {
+            const selectModelElement = document.getElementById('car-model');
+            selectModelElement.value = carModel;
+
+            // Mettre à jour la liste des couleurs en fonction du modèle sélectionné
+            const colorSelect = document.getElementById('car-color');
+            const colors = carColors[carModel] || [];
+            colorSelect.innerHTML = "<option value=''>-- Sélectionnez une couleur --</option>"; // Réinitialiser la liste des couleurs
+            colors.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+        }
+
+        // Soumission du formulaire
+        document.getElementById('buyForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Stocker les données dans localStorage
+            localStorage.setItem('fullname', document.getElementById('fullname').value);
+            localStorage.setItem('email', document.getElementById('email').value);
+            localStorage.setItem('phone', document.getElementById('phone').value);
+            localStorage.setItem('carModel', document.getElementById('car-model').value);
+            localStorage.setItem('carColor', document.getElementById('car-color').value);
+            localStorage.setItem('address', document.getElementById('address').value);
+
+            // Rediriger vers la page de confirmation
+            window.location.href = 'order-confirmation.html';
+        });
+    </script>
+</body>
+</html>

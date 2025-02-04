@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Commande</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .order-details p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Commande Confirmée</h1>
+        <h2>Merci pour votre achat !</h2>
+        <p>Votre commande a été reçue avec succès. Voici les détails :</p>
+
+        <div class="order-details">
+            <p><strong>Nom :</strong> <span id="fullname"></span></p>
+            <p><strong>Email :</strong> <span id="email"></span></p>
+            <p><strong>Numéro de téléphone :</strong> <span id="phone"></span></p>
+            <p><strong>Modèle de voiture :</strong> <span id="carModel"></span></p>
+            <p><strong>Couleur de la voiture :</strong> <span id="carColor"></span></p> <!-- Nouvelle ligne pour la couleur -->
+            <p><strong>Adresse de livraison :</strong> <span id="address"></span></p>
+        </div>
+
+        <div class="button-container">
+            <a href="payment.html" class="button">Procéder au Paiement</a>
+            <a href="buy.html" class="button">Retour à l'Achat</a>
+        </div>
+    </div>
+
+    <script>
+        // Récupérer les données du localStorage
+        document.getElementById('fullname').textContent = localStorage.getItem('fullname');
+        document.getElementById('email').textContent = localStorage.getItem('email');
+        document.getElementById('phone').textContent = localStorage.getItem('phone');
+        document.getElementById('carModel').textContent = localStorage.getItem('carModel');
+        document.getElementById('carColor').textContent = localStorage.getItem('carColor'); // Ajouter la couleur ici
+        document.getElementById('address').textContent = localStorage.getItem('address');
+    </script>
+</body>
+</html>
